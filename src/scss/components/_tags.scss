@@ -1,0 +1,17 @@
+// Tags
+.tags {
+  display: flex;
+  gap: $gutter;
+  align-items: center;
+  justify-content: center;
+}
+
+.tag {
+  padding: $p-md $p-lg;
+  background-color: $coffee;
+  border: 2px solid $coffee;
+  border-radius: 2rem;
+
+  color: $palespring;
+  text-transform: uppercase;
+}

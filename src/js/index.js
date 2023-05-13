@@ -1,0 +1,18 @@
+/* SPLIT HIERARCHICAL TAGS */
+var tagEl = document.querySelector('.tags');
+if (tagEl) {
+  var tags = tagEl.innerHTML.split(' ');
+  var html = '';
+  tags.forEach(function (tag) {
+    if (tag.includes('::')) {
+      var topleveltag = tag.substring(0, tag.indexOf('::'));
+      var bottomleveltag = tag.substring(tag.lastIndexOf('::') + 2);
+    } else {
+      var bottomleveltag = tag;
+    }
+    var newTag =
+      '<span class="tag ' + topleveltag + ' ' + bottomleveltag + '">' + bottomleveltag + '</span>';
+    html += newTag;
+  });
+  tagEl.innerHTML = html;
+}

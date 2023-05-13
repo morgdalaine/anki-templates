@@ -1,0 +1,45 @@
+.card {
+  position: relative;
+  overflow: hidden;
+
+  background: rgb($beige, 80%);
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb($olive, 100%);
+    clip-path: circle(25% at 80% 10%);
+    transition: 0.5s ease-in-out;
+    z-index: -1;
+  }
+}
+
+.note {
+  display: grid;
+  row-gap: $gutter;
+  padding: $p-lg;
+}
+
+.front,
+.back {
+  padding: $p-xl $p-lg;
+  font-size: 2rem;
+  backdrop-filter: blur(1rem);
+}
+
+.front {
+  .cloze {
+    color: $aulait;
+  }
+}
+
+.back {
+  .cloze {
+    font-weight: 700;
+    color: $aulait;
+    text-shadow: 0 0 1rem $palespring;
+  }
+}
